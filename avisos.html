@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avisos</title>
+  <!-- Enlace al archivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Home - Mi cursada</title>
+</head>
+<body>
+  <!-- Menú de navegación entre páginas -->
+  
+
+  <!-- Menú de navegación principal -->
+   <nav class="nav-custom">
+    <div class="nav-grid">
+      <a href="index.html"><i class="fas fa-house"></i> Home</a>
+      <a href="avisos.html"><i class="fas fa-bullhorn"></i> Avisos</a>
+      <a href="sobremi.html"><i class="fas fa-user"></i> Sobre mí</a>
+      <a href="materias2025.html"><i class="fas fa-book"></i> Materias</a>
+      <a href="contacto.html"><i class="fas fa-mobile-alt"></i> Contacto</a>
+      <button id="toggleTheme" class="theme-toggle" aria-label="Cambiar tema">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="avisos">
+    <!-- Título general de la página -->
+    <h1>Avisos y Tareas Pendientes</h1>
+
+    <!-- Sección: Diseño y Desarrollo Web -->
+    <section>
+      <h2>Fundamentos de Economía</h2>
+      <ul>
+        <li>Entregar Actividad UVA1 antes del 20/06.</li>
+        <li>Leer bibliografía de la unidad 2.</li>
+        <li>Revisar corrección de UVA2.</li>
+        <li>Asistir a la clase virtual del martes.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Redes de Datos</h2>
+      <ul>
+        <li>Subir trabajo práctico antes del viernes.</li>
+        <li>Leer unidad 3 del manual.</li>
+        <li>Corregir errores de UVA1.</li>
+        <li>Participar del foro obligatorio.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Arquitectura de Computadores</h2>
+      <ul>
+        <li>Entregar Actividad UVA1 antes del 20/06.</li>
+        <li>Leer bibliografía de la unidad 2.</li>
+        <li>Revisar corrección de UVA2.</li>
+        <li>Asistir a la clase virtual del martes.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Sistemas de Informmación I</h2>
+      <ul>
+        <li>Entregar informe grupal hasta el 10/07.</li>
+        <li>Estudiar contenido de la clase 5..</li>
+        <li>Releer comentarios de la profesora.</li>
+        <li>Asistir a la clase de repaso</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Introduccion a la Algoritmia</h2>
+      <ul>
+        <li>Revisar corrección del parcial 1.</li>
+        <li>Subir avance del proyecto.</li>
+        <li>Leer bibliografía complementaria.</li>
+        <li>Preparar exposición para la semana próxima.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Diseño y Desarrollo Web</h2>
+      <ul>
+        <li>Entregar Actividad UVA3</li>
+        <li>Leer bibliografía complementaria.</li>
+        <li>Revisar corrección de UVA4</li>
+        <li>Asistir a la clase virtual</li>
+      </ul>
+    </section> 
+  </main>
+
+ <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <p>© 2025 UADE</p>
+        </div>
+        <div class="footer-copyright">
+          <p>Todos los derechos reservados.</p>
+        </div>
+      </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById('toggleTheme');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggleButton.textContent = 'Modo Claro';
+    }
+
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      toggleButton.textContent = isDark ? 'Modo Claro' : 'Modo Oscuro';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  });
+</script>
+</body>
+</html>

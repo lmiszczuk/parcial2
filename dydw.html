@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño y Desarrollo Web</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Home - Mi cursada</title>
+</head>
+<body>
+  <!-- Menú de navegación entre páginas -->
+  
+
+  <!-- Menú de navegación principal -->
+   <nav class="nav-custom">
+    <div class="nav-grid">
+      <a href="index.html"><i class="fas fa-house"></i> Home</a>
+      <a href="avisos.html"><i class="fas fa-bullhorn"></i> Avisos</a>
+      <a href="sobremi.html"><i class="fas fa-user"></i> Sobre mí</a>
+      <a href="materias2025.html"><i class="fas fa-book"></i> Materias</a>
+      <a href="contacto.html"><i class="fas fa-mobile-alt"></i> Contacto</a>
+      <button id="toggleTheme" class="theme-toggle" aria-label="Cambiar tema">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+  <!-- Contenedor principal -->
+  <main class="contenedor">
+    <!-- Título principal -->
+    <h1>Diseño y Desarrollo Web</h1>
+    <!-- Grid de contenidos -->
+    <div class="grid-contenido">
+      <div class="caja pequeña">
+        <P><STRong>
+         Fechas de Exámenes
+        </STRong></P>
+        <h2>
+         18/07/25
+        </h2>
+        <p><STrong>FINAL REGULAR</STrong></FINAL></p>
+      </div>
+
+      <div class="caja grande">
+        <h2>Actividades UVAs</h2>
+        <ul>
+        <li>Entregar Actividad UVA3</li>
+        <li>Leer bibliografía complementaria.</li>
+        <li>Revisar corrección de UVA4</li>
+        <li>Asistir a la clase virtual</li>
+        <li>Entrega Pagina Personal</li>
+      </ul>
+      </div>
+      
+      <div class="caja pequeña">
+        <H2> BIBLIOGRAFIA</H2>
+       
+        <p><strong>HTML</strong></p>
+        <p><strong>CSS</strong></p>
+        <p><strong>BOOTSTRAP</strong></p>
+        <p><strong>FIGMA</strong></p>
+        <p><strong>GITHUB</strong></p>
+     
+
+
+      </div>
+    </div>
+  </main>
+  
+ <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <p>Curso: Nro curso</p>
+        </div>
+        <div class="footer-copyright">
+          <p>  / Profesora: Patricia Litovicius</p>
+        </div>
+      </div>
+    </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById('toggleTheme');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggleButton.textContent = 'Modo Claro';
+    }
+
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      toggleButton.textContent = isDark ? 'Modo Claro' : 'Modo Oscuro';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,519 @@
+/* Importar una fuente moderna desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --color-primario: #1976d2;       /* Azul fuerte */
+  --color-secundario: #bbdefb;     /* Azul claro / celeste */
+  --color-fondo: #ffffff;          /* Fondo blanco */
+  --color-texto: #333333;          /* Texto principal */
+  --color-hover: #1565c0;          /* Azul más oscuro para hover */
+  --borde-radio: 8px;
+}
+
+
+
+/* ===== Modo Oscuro ===== */
+.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1; /* Color de texto general en modo oscuro */
+}
+
+.dark-mode .nav {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .nav a {
+  color: #f1f1f1;
+}
+
+.dark-mode .formulario,
+.dark-mode table th,
+.dark-mode table td,
+.dark-mode .caja,
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #222;
+  color: white;
+  border-color: #444;
+}
+
+.dark-mode input[type="submit"] {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode input[type="submit"]:hover {
+  background-color: #888;
+}
+
+.dark-mode .imagen-perfil img {
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.dark-mode h1,
+.dark-mode h2 {
+  color: var(--color-secundario);
+}
+
+.dark-mode section {
+  background-color: var(--color-texto); /* Esto lo hará un gris muy oscuro, casi negro */
+  /* Si quieres negro puro, podrías usar: background-color: #000000; */
+}
+/* Color específico para los párrafos dentro de la sección "Sobre mí" en modo oscuro */
+.dark-mode .sobre-mi-presentacion p strong {
+  color: var(--color-secundario); /* Los párrafos de esta sección serán celestes */
+}
+
+/* Reset básico y fuente global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-primario);
+  line-height: 1.6;
+  /* Eliminado: padding: 20px; para que nav y footer abarquen todo el ancho */
+}
+
+/* ------------------------------
+   Navegación principal
+------------------------------- */
+.nav-custom {
+  background-color: var(--color-primario);
+  padding: 1rem 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nav-grid a {
+  text-decoration: none;
+  color: var(--color-fondo);
+  font-size: 1.1rem;
+  padding: 0.6rem;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.nav-grid a:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+}
+
+.nav-grid a.active {
+  background-color: #003d66;
+}
+
+.nav-custom a {
+  color: #ffffff; /* ¡Establece el color de las letras a blanco! */
+}
+
+.theme-toggle {
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--color-fondo);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  color: var(--color-secundario);
+}
+
+.theme-toggle i {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .nav-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ------------------------------
+   Títulos y contenido principal
+------------------------------- */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+  font: 1em sans-serif;
+}
+
+h2 {
+
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 20xp;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1, h2 {
+  color: var(--color-primario); /* Esto debería hacer que sean #1976d2 (azul fuerte) */
+ 
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px; /* Añadido padding para el contenido principal */
+}
+
+/* ------------------------------
+   Listas y tablas
+------------------------------- */
+ul {
+  list-style: disc inside;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.95rem;
+  background-color: var(--color-fondo);
+  border-radius: var(--borde-radio);
+
+  border-bottom: 1px solid var(--color-primario)
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid var(--color-primario);
+  text-align: center;
+}
+
+table th {
+  background-color: var(--color-primario);
+  color: var(--color-fondo)
+}
+
+
+/* ------------------------------
+   Formularios
+------------------------------- */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #e3f2fd;
+  padding: 20px;
+  border-radius: var(--borde-radio);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 40px
+  
+
+}
+
+.formulario label {
+  font-weight: bold;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario textarea {
+  padding: 10px;
+  border: 1px solid #90caf9;
+  border-radius: var(--borde-radio);
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.formulario input[type="submit"] {
+  background-color: var(--color-primario);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: var(--borde-radio);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.formulario input[type="submit"]:hover {
+  background-color: var(--color-hover);
+}
+
+/* ------------------------------
+   Imagen de perfil (sobre mí)
+------------------------------- */
+.imagen-perfil {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.imagen-perfil img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--color-secundario);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1)
+}
+
+/* ------------------------------
+   Diseño responsive
+------------------------------- */
+@media (max-width: 768px) {
+  /* No se necesita padding aquí si ya se maneja en main */
+  /* body {
+    padding: 10px;
+  } */
+
+  .nav {
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+  }
+
+  table th, table td {
+    padding: 6px;
+    font-size: 0.85rem;
+  }
+
+  .formulario {
+    padding: 15px;
+  }
+
+  /* Reglas para la grilla en responsive, consolidadas */
+  .grid-contenido {
+    grid-template-columns: 1fr 2fr; /* Esta línea define la distribución en columnas */
+    grid-template-rows: auto;
+  }
+
+  .grande {
+    grid-row: auto;
+    height: 200px;
+  }
+
+  .pequeña {
+    height: 120px;
+  }
+
+  main {
+    padding: 10px; /* Ajuste el padding del main para pantallas pequeñas */
+  }
+}
+
+
+
+/* Footer */
+footer {
+  background: var(--color-hover);
+  color: var(--color-fondo);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--color-texto);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-brand p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.footer-logo {
+  height: 30px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-copyright p {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Estilos para las secciones como cajas */
+
+section {
+  background-color: var(--color-secundario);
+  padding: 20px;
+  margin-bottom: 20px; /* Espacio entre secciones */
+  border-radius: var(--borde-radio);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+/* Estilos para la sección combinada de "Sobre mí" */
+.sobre-mi-presentacion {
+  display: flex; /* Habilitamos Flexbox para alinear elementos horizontalmente */
+  align-items: center; /* Centramos verticalmente los elementos dentro de la sección */
+  gap: 30px; /* Espacio entre la imagen y el texto */
+  padding: 30px; /* Aumentamos el padding para una mejor visualización */
+  margin-bottom: 20px;
+  background-color: var(--color-secundario); /* Usa el color secundario como fondo de la caja */
+  border-radius: var(--borde-radio);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad de caja */
+}
+
+.sobre-mi-presentacion img {
+  width: 100px; /* Tamaño de la imagen */
+  height: 100px; /* Tamaño de la imagen */
+  border-radius: 50%; /* Para hacerla circular */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  border: 4px solid var(--color-primario); /* Borde alrededor de la imagen */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra para la imagen */
+  flex-shrink: 0; /* Evita que la imagen se encoja en pantallas pequeñas */
+}
+
+.presentacion-texto {
+  flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+  color: var(--color-texto); /* Color del texto para asegurar visibilidad */
+}
+
+.presentacion-texto p {
+  margin-bottom: 10px; /* Espacio entre párrafos */
+  line-height: 1.6;
+}
+
+.presentacion-texto p strong {
+  font-size: 1.3rem; /* Tamaño de fuente para los nombres */
+  color: var(--color-primario); /* Color para los nombres */
+}
+
+.presentacion-texto .informacion-extra {
+  font-size: 0.95rem; /* Tamaño de fuente para el texto adicional */
+}
+
+@media (max-width: 768px) {
+  .sobre-mi-presentacion {
+    flex-direction: column; /* Apila la imagen y el texto verticalmente */
+    text-align: center; /* Centra el texto */
+    gap: 20px; /* Ajusta el espacio */
+    padding: 20px;
+  }
+
+  .sobre-mi-presentacion img {
+    margin-bottom: 10px; /* Añade un pequeño margen debajo de la imagen */
+  }
+}
+
+/* Estilos para que cada li sea una caja con texto grande */
+ul li {
+  background-color: var(--color-fondo); /* Fondo claro para la caja */
+  padding: 15px 20px; /* Espaciado interno de la caja */
+  margin-bottom: 10px; /* Espacio entre cada caja de lista */
+  border-radius: var(--borde-radio); /* Bordes redondeados */
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.08); /* Sombra suave para dar efecto de caja */
+  font-size: 1.3rem; /* Tamaño de texto ligeramente más pequeño que h2 pero notorio (h2 es 1.5rem) */
+  color: var(--color-hover); /* Color de texto primario */
+  list-style: none; /* Elimina los puntos predeterminados de la lista */
+  font-weight: 500; /* Hace el texto un poco más audaz */
+}
+
+/* Ajuste para el modo oscuro */
+.dark-mode ul li {
+  background-color: gray; /* Fondo oscuro para la caja en modo oscuro */
+  color: var(--color-secundario); /* Texto celeste en modo oscuro */
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.08); /* Sombra clara en modo oscuro */
+}
+
+/* Estilos para todos los enlaces */
+a {
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+/* Opcional: Si quieres un efecto al pasar el ratón, pero sin que cambie a un color distinto por defecto */
+a:hover {
+  opacity: 0.8; /* Hace el enlace ligeramente transparente al pasar el ratón */
+  /* text-decoration: underline; -- Puedes añadirlo si quieres que se subraye SOLO al pasar el ratón */
+}
+
+
+/* Custom styles for grid content */
+/* Custom styles for grid content */
+/* Custom styles for grid content */
+.grid-contenido {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Columna izquierda para pequeñas (1fr), derecha para grandes (2fr) */
+  gap: 20px; /* Espacio entre los elementos de la cuadrícula */
+  align-items: start; /* Alinea los elementos al inicio de su área de cuadrícula (parte superior) */
+  margin-top: 20px; /* Espacio superior del título principal */
+  justify-content: center;
+}
+
+.caja {
+  background-color: var(--color-secundario);
+  padding: 20px;
+  border-radius: var(--borde-radio);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: var(--color-texto); /* Asegura que el texto sea legible */
+  height: auto; /* Permite que el contenido dicte la altura de la caja */
+  width: 100%; /* Ocupa el 100% del ancho de su columna de cuadrícula */
+  justify-content: center;
+}
+
+.pequeña {
+  grid-column: 1; /* Coloca las cajas pequeñas en la primera columna */
+
+
+}
+
+.grande {
+  grid-column: 2; /* Coloca la caja grande en la segunda columna */
+  grid-row: 1 / span 2; /* La caja grande empieza en la fila 1 y abarca 2 filas */
+}
+
+/* Estilos específicos para los elementos dentro de las cajas */
+.caja h2 {
+  color: var(--color-primario);
+  margin-top: 0; /* Elimina el margen superior predeterminado de h2 dentro de las cajas */
+}
+
+.caja p {
+  margin-bottom: 10px;
+}
+
+/* Ajustes responsivos para la cuadrícula */
+@media (max-width: 768px) {
+  .grid-contenido {
+    grid-template-columns: 1fr; /* Apila las columnas en pantallas pequeñas (una sola columna) */
+    gap: 15px;
+  }
+
+  .pequeña, .grande {
+    grid-column: 1; /* Todas las cajas ocupan la única columna */
+    grid-row: auto; /* Permite que las filas se apilen automáticamente */
+    height: auto; /* Asegura que la altura se adapte al contenido también en pantallas pequeñas */
+  }
+}

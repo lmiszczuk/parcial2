@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí</title>
+  <!-- Enlace a hoja de estilos externa -->
+  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Home - Mi cursada</title>
+</head>
+<body>
+  <!-- Menú de navegación entre páginas -->
+  
+
+  <!-- Menú de navegación principal -->
+   <nav class="nav-custom">
+    <div class="nav-grid">
+      <a href="index.html"><i class="fas fa-house"></i> Home</a>
+      <a href="avisos.html"><i class="fas fa-bullhorn"></i> Avisos</a>
+      <a href="sobremi.html"><i class="fas fa-user"></i> Sobre mí</a>
+      <a href="materias2025.html"><i class="fas fa-book"></i> Materias</a>
+      <a href="contacto.html"><i class="fas fa-mobile-alt"></i> Contacto</a>
+      <button id="toggleTheme" class="theme-toggle" aria-label="Cambiar tema">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="sobre-mi">
+
+    <main>
+    <h1>Sobre mí</h1>
+
+    <section class="sobre-mi-presentacion">
+      <img src="img/fotolucia.jpg" alt="Foto de Lucia">
+
+      <div class="presentacion-texto">
+        <p><strong>Lucia del Milagros Miszczuk</strong></p>
+        <p><strong>Licenciatura en Gestión de IT - Modalidad Virtual</strong></p>
+     
+      </div>
+    </section>
+
+  </main>
+
+
+    <section class="informacion-extra">
+        <p>¡Hola! Soy Lu, tengo 22 años y estoy estudiando la Licenciatura en Gestión de Tecnologías de la Información.</p>
+
+        <p>Mi camino hasta llegar a este mundo no fue tan directo, primero me recibí de Maestra Mayor de Obras en un colegio técnico, siempre tuve una inclinación técnica pero el entorno de las construcciones no me gustaba para dedicarme a eso.</p>
+
+        <p>Al principio no tenía mucha idea de este rubro, pero con el tiempo descubrí que la programación me encanta. Me parece fantástico cómo todo está conectado y cómo se pueden resolver cuestiones de nuestra vida diaria con lógica y creatividad. </p>
+
+        <p>Más allá de lo académico, me gusta tener un poco de equilibrio en la vida. Hago natación, que me ayuda a relajarme y ordenar la cabeza, y también me gusta mucho la pastelería, los domingos aprovecho para hacer tortas.</p>
+
+        <p>Elegí esta carrera porque siempre me sentí una persona muy creativa, y con el tiempo descubrí que la informática es una forma distinta de canalizar esa creatividad. Me encanta cómo, a través de la lógica y la programación, se pueden construir soluciones, sistemas o ideas desde cero, casi como si fuese una forma de arte digital. Siento que este mundo me permite expresar mi forma de pensar y crear, pero de una manera estructurada y compleja a la vez.</p>
+        
+        <p>Gracias por leer un poco sobre mí :p </p> 
+    </section>
+
+  </main>
+  </main>
+
+   <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <p>© 2025 UADE</p>
+        </div>
+        <div class="footer-copyright">
+          <p>Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById('toggleTheme');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggleButton.textContent = 'Modo Claro';
+    }
+
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      toggleButton.textContent = isDark ? 'Modo Claro' : 'Modo Oscuro';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  });
+</script>
+
+</body>
+</html>
